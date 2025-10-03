@@ -1,4 +1,4 @@
-# poi-plugin-auto-refresher
+# poi-plugin-auto-refresher-kai
 
 Avoid unwelcome nodes or edges by refreshing. Use at your own risk.
 
@@ -8,6 +8,10 @@ then call poi's own functionality to reload Flash.
 For details about how configs are written, see [`docs/config.md`](docs/config.md)
 
 ## Changelog
+
+### 0.4.0
+
+Modified for kancolle 2nd.
 
 ### 0.3.4
 
