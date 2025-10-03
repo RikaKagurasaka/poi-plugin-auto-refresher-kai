@@ -22,7 +22,7 @@
 
   "Info": {
     "LastGameStart": "最近頁面載入",
-    "LastFlashLoad": "最近Flash載入"
+    "LastFlashLoad": "最近框架載入"
   },
 
   "Message": {
@@ -32,7 +32,7 @@
   "TriggerAction": {
     "Desc": "觸發動作",
     "Options": {
-      "reloadFlash": "重載Flash",
+      "reloadFlash": "重載框架",
       "refreshPage": "刷新頁面",
       "toast": "彈出消息",
       "noop": "無動作"
