@@ -8,7 +8,7 @@ import {
 import { generalComparator } from 'subtender'
 import { splitMapId } from 'subtender/kc'
 import {
-  gameReloadFlash,
+  gameReload,
   gameRefreshPage,
 } from 'views/services/utils'
 
@@ -97,7 +97,7 @@ const performTriggerActionFuncSelector = createSelector(
   triggerActionSelector,
   triggerAction => {
     if (triggerAction === 'reloadFlash') {
-      return gameReloadFlash
+      return gameReload
     }
     if (triggerAction === 'refreshPage') {
       return gameRefreshPage
