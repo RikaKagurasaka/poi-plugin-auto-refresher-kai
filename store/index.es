@@ -19,7 +19,7 @@ const { getStore } = window
 
 const reducer = (state = initState, action) => {
   // put pState back into state, set ready flag
-  if (action.type === '@@poi-plugin-auto-refresher@Init') {
+  if (action.type === '@@poi-plugin-auto-refresher-kai@Init') {
     const {pState} = action
     // using _.get because pState could be null
     const ui = _.get(pState,'ui')
@@ -43,7 +43,7 @@ const reducer = (state = initState, action) => {
   if (!state.ready)
     return state
 
-  if (action.type === '@@poi-plugin-auto-refresher@Modify') {
+  if (action.type === '@@poi-plugin-auto-refresher-kai@Modify') {
     const {modifier} = action
     return modifier(state)
   }
@@ -78,7 +78,9 @@ const reducer = (state = initState, action) => {
       if (shouldTrigger(edgeId)) {
         const performAction = performTriggerActionFuncSelector(poiState)
         if (typeof performAction === 'function') {
-          performAction()
+          // wait a random time between 0.3s and 0.7s before triggering
+          const waitTime = 300 + Math.floor(Math.random()*400)
+          setTimeout(() => {performAction(edgeId)}, waitTime)
         } else {
           console.error(`unexpected performAction value: ${performAction}`)
         }
@@ -101,11 +103,11 @@ const actionCreators = {
      when the state is 'ready', all other actions are ignored.
    */
   init: pState => ({
-    type: '@@poi-plugin-auto-refresher@Init',
+    type: '@@poi-plugin-auto-refresher-kai@Init',
     pState,
   }),
   modify: modifier => ({
-    type: '@@poi-plugin-auto-refresher@Modify',
+    type: '@@poi-plugin-auto-refresher-kai@Modify',
     modifier,
   }),
   modifyUI: modifier =>

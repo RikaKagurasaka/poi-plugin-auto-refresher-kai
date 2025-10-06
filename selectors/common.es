@@ -17,7 +17,7 @@ import { initState } from '../store/common'
 import { __ } from '../tr'
 
 const extSelector = createSelector(
-  extensionSelectorFactory('poi-plugin-auto-refresher'),
+  extensionSelectorFactory('poi-plugin-auto-refresher-kai'),
   ext => _.isEmpty(ext) ? initState : ext)
 
 const fcdMapSelector = createSelector(
